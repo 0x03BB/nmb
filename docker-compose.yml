@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  samba:
+    image: servercontainers/samba
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+     - CAP_NET_ADMIN
