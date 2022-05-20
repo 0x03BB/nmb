@@ -2,8 +2,12 @@ version: '3.8'
 
 services:
   samba:
-    image: servercontainers/samba
+    build: ./build
+    image: samba
     restart: unless-stopped
     network_mode: host
-    cap_add:
-     - CAP_NET_ADMIN
+    environment:
+      INTERFACES: "${INTERFACES:?Setting INTERFACES is required}"
+      NETBIOS_NAME: "${NETBIOS_NAME}"
+      NETBIOS_ALIASES: "${NETBIOS_ALIASES}"
+      WINS_SERVER: "${WINS_SERVER}"
