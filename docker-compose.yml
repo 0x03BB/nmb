@@ -3,7 +3,7 @@ version: '3.8'
 services:
   samba:
     build: ./build
-    image: samba
+    image: ${DOCKER_REGISTRY}samba:${DOCKER_TAG:-latest}
     restart: unless-stopped
     network_mode: host
     environment:
