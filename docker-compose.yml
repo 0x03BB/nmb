@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  samba:
+  nmb:
     build: ./build
-    image: ${DOCKER_REGISTRY}samba:${DOCKER_TAG:-latest}
+    image: ${DOCKER_REGISTRY}nmb:${DOCKER_TAG:-latest}
     restart: unless-stopped
     network_mode: host
     environment:
